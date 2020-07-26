@@ -1,0 +1,25 @@
+[package]
+name = "seabird-poll"
+version = "0.1.0"
+authors = ["Jay Vana <jaysvana@gmail.com>"]
+edition = "2018"
+build = "build.rs"
+
+[dependencies]
+async-trait = "0.1"
+env_logger = "0.7"
+anyhow = "1.0"
+dotenv = "0.15"
+tonic = { version = "0.2", features = ["tls", "tls-roots"] }
+prost = "0.6"
+tokio = { version = "0.2", features = ["rt-threaded", "time", "stream", "fs", "uds", "macros"] }
+tokio-postgres = "0.5"
+futures = { version = "0.3", default-features = false, features = ["alloc"] }
+tower = "0.3"
+prost-types = "0.6"
+http = "0.2"
+maplit = "1.0"
+log = "0.4"
+
+[build-dependencies]
+tonic-build = { version = "0.2", features = ["prost"] }
